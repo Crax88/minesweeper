@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Minesweeper</title>
+  <link rel="stylesheet" href="style.css"></link>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container">
+    <div class="grid"></div>
+    <div>Флагов осталось: <span id='flags-left'></span></div>
+    <div id="result"></div>
+    <div>
+      <span>Побед: <span id="wins">0</span>
+      <span>Поражений: <span id="loses">0</span>
+    </div>
+    <button id="restart">Заново</button>
+  </div>
+  <script>
+    const memo = () => {
+      let res = []
+      let length 
+      function count(len) {
+        if (len === length) return res
+        res.splice(0)
+        for (let i = 0; i<=len; i++) {
+          console.log('loop')
+          res.push(i)
+        }
+        length = len
+        return res
+      }
+      return count
+    }
+    function fibonacci(n,memo) {
+    memo = memo || {}
+    if (memo[n]) {
+        return memo[n]
+    }
+    if (n <= 1) {
+        return 1
+    }
+    return memo[n] = fibonacci(n - 1, memo) + fibonacci(n - 2, memo)
+}
+  const fibs = fibonacci(2,{})
+console.log(fibs)
+console.log(fibonacci(5,{}))
+  </script>
+  <script src="app.js"></script>
+
+</body>
+</html>
